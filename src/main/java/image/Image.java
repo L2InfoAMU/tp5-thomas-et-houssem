@@ -10,3 +10,19 @@ public interface Image {
     int getWidth();
     int getHeight();
 }
+
+public class BruteRasterImage implements Image{
+    private Color color;
+    public int width;
+    public int height;
+
+    public BruteRasterImage(Color color, int width, int height){
+        this.color=color;
+        this.width=width;
+        this.height=height;
+    }
+    public BruteRasterImage(Color[][] colors){
+        this.Color[x]=x;
+        this.Color[y]=y;
+    }
+}
