@@ -15,7 +15,8 @@ public class BruteRasterImage implements Image {
 
     @Override
     public int getHeight() {
-        return 0;
+
+        return height;
     }
 
     public BruteRasterImage(Color color, int width, int height) {
