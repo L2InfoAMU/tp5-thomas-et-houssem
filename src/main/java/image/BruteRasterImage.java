@@ -8,13 +8,9 @@ public class BruteRasterImage implements Image {
     public int height;
 
     @Override
-    public Color getPixelColor(int x, int y) {
-        return null;
-    }
-
-    @Override
     public int getWidth() {
-        return 0;
+
+        return width;
     }
 
     @Override
