@@ -4,8 +4,13 @@ import javafx.scene.paint.Color;
 
 public class BruteRasterImage implements Image {
     private Color[][] pixels;
-    public int width;
-    public int height;
+    private int width;
+    private int height;
+
+    @Override
+    public Color getPixelColor(int x, int y){
+        return this.pixels[x][y];
+    }
 
     @Override
     public int getWidth() {
@@ -24,9 +29,8 @@ public class BruteRasterImage implements Image {
         this.width = width;
         this.height = height;
         for (width = 0; width < getWidth(); width++) {
-            Color[width][height]=color;
             for (height = 0; height < getHeight(); height++) {
-                Color[width][height]=color;
+                this.pixels[width][height]=color;
             }
         }
     }
