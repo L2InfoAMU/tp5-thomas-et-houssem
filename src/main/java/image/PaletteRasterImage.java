@@ -19,17 +19,33 @@ public class PaletteRasterImage implements Image {
 
 
     }
-
-
     public PaletteRasterImage(Color[][] pixels) {
         this.height = getColumnCount(pixels);
         this.width = getRowCount(pixels);
         createRepresentation();
         setPixelsColor(pixels);
-
-        
-
-
     }
+
+    @Override
+    public void setPixelColor(Color color, int x, int y) {
+        if(!palette.contains(color))
+            palette.add(color);
+        indexesOfColors[x][y] = palette.indexOf(color);
+    }
+    @Override
+    public Color getPixelColor(int x, int y) {
+        return palette.get(indexesOfColors[x][y]);
+    }
+
+    @Override
+    public int getWidth() {
+        return width;
+    }
+
+    @Override
+    public int getHeight() {
+        return height;
+    }
+
 
 }
