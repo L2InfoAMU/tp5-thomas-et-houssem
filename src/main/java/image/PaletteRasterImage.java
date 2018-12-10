@@ -32,6 +32,7 @@ public class PaletteRasterImage implements Image {
             palette.add(color);
         indexesOfColors[x][y] = palette.indexOf(color);
     }
+
     @Override
     public Color getPixelColor(int x, int y) {
         return palette.get(indexesOfColors[x][y]);
@@ -46,6 +47,18 @@ public class PaletteRasterImage implements Image {
     public int getHeight() {
         return height;
     }
+
+    @Override
+    protected void setWidth(int width) {
+        this.width = width;
+    }
+
+    @Override
+    protected void setHeight(int height) {
+        this.height = height;
+    }
+
+    
 
 
 }
