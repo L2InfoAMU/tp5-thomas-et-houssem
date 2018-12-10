@@ -58,7 +58,13 @@ public class PaletteRasterImage implements Image {
         this.height = height;
     }
 
-    
+    @Override
+    public void createRepresentation() {
+        this.palette = new ArrayList<>();
+        this.indexesOfColors = new int[width][height];
+    }
+
+
 
 
 }
