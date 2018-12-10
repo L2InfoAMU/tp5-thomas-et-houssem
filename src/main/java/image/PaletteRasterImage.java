@@ -16,14 +16,15 @@ public class PaletteRasterImage implements Image {
         createRepresentation();
         palette.add(color);
         setPixelsColor(color);
-
-
     }
+
     public PaletteRasterImage(Color[][] pixels) {
-        this.height = getColumnCount(pixels);
-        this.width = getRowCount(pixels);
-        createRepresentation();
-        setPixelsColor(pixels);
+        int i,j;
+        width= pixels.length;
+        height= pixels[0].length;
+        for (i=0;i<width;i++)
+            for(j=0; j<height;j++)
+            setPixelColor(pixels[i][j],i,j);
     }
 
     @Override
