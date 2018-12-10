@@ -2,10 +2,7 @@ package image;
 
 import java.awt.image.Raster;
 
-public class RasterImageType {
+public enum RasterImageType {
 
-    public static final int BRUTE
-
-
-    public RasterImageType(Raster)
+    BRUTE;
 }

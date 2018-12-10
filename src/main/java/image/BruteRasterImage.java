@@ -24,9 +24,9 @@ public class BruteRasterImage implements Image {
         this.width = width;
         this.height = height;
         for (width = 0; width < getWidth(); width++) {
-            Color[width][]=color;
+            Color[width][height]=color;
             for (height = 0; height < getHeight(); height++) {
-                Color[][height]=color;
+                Color[width][height]=color;
             }
         }
     }
