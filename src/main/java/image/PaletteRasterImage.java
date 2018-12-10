@@ -7,7 +7,7 @@ public class PaletteRasterImage implements Image {
     private List <Color> palette;
     private int width;
     private int height;
-    private int[][] IndexesOfColors;
+    private int[][] indexesOfColors;
 
     public PaletteRasterImage(Color color, int width, int height){
         this.width=width;
