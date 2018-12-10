@@ -49,12 +49,12 @@ public class PaletteRasterImage implements Image {
     }
 
     @Override
-    void setWidth(int width) {
+    protected void setWidth(int width) {
         this.width = width;
     }
 
     @Override
-    void setHeight(int height) {
+    protected void setHeight(int height) {
         this.height = height;
     }
 
@@ -65,7 +65,7 @@ public class PaletteRasterImage implements Image {
     }
 
     @Override
-    void setPixelsColor(Color[][] pixels) {
+    public void setPixelsColor(Color[][] pixels) {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 palette.add(pixels[x][y]);
@@ -74,9 +74,10 @@ public class PaletteRasterImage implements Image {
         }
     }
 
-
-
-
-
-
+    @Override
+    private void setPixelsColor(Color color) {
+        for (int x = 0; x < width; x++)
+            for (int y = 0; y < height; y++)
+                indexesOfColors[x][y] = palette.indexOf(color);
+    }
 }
