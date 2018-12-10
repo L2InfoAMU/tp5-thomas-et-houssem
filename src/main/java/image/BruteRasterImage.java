@@ -36,6 +36,8 @@ public class BruteRasterImage implements Image {
     }
 
     public BruteRasterImage(Color[][] colors) {
+        this.width = colors.length;
+        this.height= colors[0].length;
         this.pixels = colors;
     }
 }
