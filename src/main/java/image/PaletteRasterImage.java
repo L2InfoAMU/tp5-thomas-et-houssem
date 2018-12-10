@@ -1,8 +1,7 @@
 package image;
-
-import java.awt.*;
+import javafx.scene.paint.Color;
 import java.util.ArrayList;package color;
-
+import java.util.List;
 
 public class PaletteRasterImage implements Image {
     private List <Color> palette;
@@ -14,12 +13,22 @@ public class PaletteRasterImage implements Image {
         this.width=width;
         this.height=height;
         this.palette= new ArrayList<Color>();
+        createRepresentation();
+        palette.add(color);
+        setPixelsColor(color);
 
 
     }
 
 
     public PaletteRasterImage(Color[][] pixels) {
+        this.height = getColumnCount(pixels);
+        this.width = getRowCount(pixels);
+        createRepresentation();
+        setPixelsColor(pixels);
+
+        
+
 
     }
 
